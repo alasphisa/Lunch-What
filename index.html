@@ -1,29 +1,20 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="canonical" href="https://letswritetw.github.io/letswrite-food-check/" />
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
 
-	<title>午餐吃什麼 - Augustus - Let's Write</title>
-	<meta name="description" content="午餐吃什麼？用抽獎方式來決定今天的午餐吧！由 Augustus 開發，以 Google Excel 當資料庫，介接 Google Map Embed API，輕鬆好管理。">
-	<link rel="shortcut icon" href="https://letswritetw.github.io/letswritetw/dist/img/logo_512.png"/>
-	<meta property="og:url" content="https://letswritetw.github.io/letswrite-food-check/" />
-	<meta property="og:site_name" content="Let's Write" />
-	<meta property="og:title" content="午餐吃什麼 - by Augustus - Let's Write" />
-	<meta property="og:description" content="午餐吃什麼？用抽獎方式來決定今天的午餐吧！由 Augustus 開發，以 Google Excel 當資料庫，介接 Google Map Embed API，輕鬆好管理。" />
-	<meta property="og:image" content="https://letswritetw.github.io/letswrite-food-check/assets/img/bg-food.jpg" />
-	<meta itemprop="name" content="午餐吃什麼 - by Augustus">
-	<meta itemprop="description" content="午餐吃什麼？用抽獎方式來決定今天的午餐吧！由 Augustus 開發，以 Google Excel 當資料庫，介接 Google Map Embed API，輕鬆好管理。">
-	<meta itemprop="image" content="https://letswritetw.github.io/letswrite-food-check/assets/img/bg-food.jpg">
-
+	<title>中午我想來點</title>
+	<meta name="description" content="中午我想來點？用小瑪莉風格來決定午餐吧！由 老雷 開發， GSheet 連接 GMapAPI。">
 
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css'/>
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'/>
 	<link rel="stylesheet" href="assets/css/main.css">
 
 	<!-- Google Tag Manager-->
+	<!--
 	<script>
 		(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -31,15 +22,16 @@
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-PGQ9WQT');
 	</script>
-
+  -->
 </head>
 <body>
 
 	<!-- Google Tag Manager (noscript)-->
+	<!--
 	<noscript>
 		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGQ9WQT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
 	</noscript>
-
+  -->
 	<!--  背景圖  -->
 	<main class="full-block">
 		
@@ -48,9 +40,9 @@
 			
 			<!--  顯示區塊  -->
 			<section class="god">
-				<h1>
+				<h1 "font-size: 8vmin">
 					<span class="wrap">
-						<span>午餐吃什麼呢？</span>
+						<span>我想來點？</span>
 					</span>
 				</h1>
 			</section>
@@ -59,13 +51,13 @@
 			<section class="btns">
 
 				<div class="checkbox">
-					<p class="vegetarian">Vegetarian？</p>
+					<p class="vegetarian">素食？</p>
 
-					<!--  素食  -->
+					<!--  預設 素食 OFF -->
 					<div class="check">
 						<label class="toggle">
-							<input id="vage" type="checkbox" checked>
-							<span class="button round"></span>
+							<input id="vage" type="checkbox" <!--checked--> >
+ 							<span class="button round"></span>
 						</label>
 					</div> 
 				</div>
@@ -86,39 +78,23 @@
 		</div>
 	</main>
 
-	<!--  github link  -->
-	<div class="github">
-		<a href="https://github.com/letswritetw/letswrite-food-check">
-			<i class="fa fa-github" aria-hidden="true"></i>
-		</a>
-	</div>
-
-	<!--  for search  -->
-	<div class="search-only">
-		<h2>
-			午餐吃什麼選擇器 Google Excel、Google Map Embed API
-		</h2>
-		<p>
-			午餐吃什麼？用抽獎方式來決定今天的午餐吧！由 Augustus 開發，以 Google Excel 當資料庫，介接 Google Map Embed API，輕鬆好管理。
-		</p>
-	</div>
-	
-
+  <!-- 餐廳清單 -->
 	<script>
-		const url = 'https://spreadsheets.google.com/feeds/list/11wLZL0bNoD7ZQwfN3Tkx41YB6IgLbv4ftsrxywA0114/1/public/values?alt=json';
-
-		const duration = 2000; // 拉霸效果執行多久
+		const url = 
+		'https://spreadsheets.google.com/feeds/list/1rc4TdjvAcM8Nxeivvsxc5NvlBUMoWEqld2kMt5wMIaA/1/public/values?alt=json';
+		
+		const duration = 1500; // 拉霸效果執行多久 ms 
 
 		// Maps Embed API 的 key，可由 https://console.developers.google.com/apis 申請
-		const embedApiKey = 'AIzaSyDVSu8cjT27wDKGUaahg5qx-FXlNVqD2N8';
-
+		const embedApiKey = 'AIzaSyCWSEcj_1i763wQKjgO89a78mS3HdrZWnQ';
+		
 		fetch(url)
 			.then(res => res.json())
 			.then(data => {
-				let vages = []; // 素
-				let meats = []; // 葷
+				let vages = []; // 素食餐廳
+				let meats = []; // 葷食餐廳
 
-				// 分葷、素，塞入陣列
+				// 分葷、素食餐廳，塞入清單(陣列)
 				const d = data.feed.entry, len =  d.length;
 				
 				for(let i = 0; i < len; i++) {
@@ -127,9 +103,9 @@
 				
 
 				// 點擊按鈕後執行
-				let r; // 亂數
+				let rand; // 亂數
 				let max, min; // 陣列的最大、小值
-				let txt; // 結果
+				let res; // 結果
 
 
 				// 地圖
@@ -141,11 +117,11 @@
 				btn.addEventListener('click', e => {
 					e.preventDefault();
 
-					// 選店家 fn
+					// 選店家 function
 					const chooseShop = toggle => {
 
-						// 取亂數 fn
-						r = () => {
+						// 隨機亂數 function
+						rand = () => {
 							max = toggle.length - 1;
 							min = 0;
 							return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -165,9 +141,9 @@
 						const list = document.querySelectorAll('.wrap > span');
 						Array.prototype.forEach.call(list, l => l.classList.add('span-' + (toggle.length - 1)));
 
-						// 亂數決定中選店家
-						txt = toggle[r()];
-						list[0].innerText = txt;
+						// 亂數選店家
+						res = toggle[rand()];
+						list[0].innerText = res;
 						
 						// 移除動畫
 						setTimeout(() => {
@@ -175,7 +151,7 @@
 							Array.prototype.forEach.call(list, l => l.removeAttribute('class'));
 
 							// 改變地圖位置
-							map.src = 'https://www.google.com/maps/embed/v1/place?key=' + embedApiKey + '&q=' + txt;
+							map.src = 'https://www.google.com/maps/embed/v1/place?key=' + embedApiKey + '&q=' + res;
 
 						}, duration);
 
@@ -191,7 +167,7 @@
 					// 地圖先消失
 					map.classList.add('hidden');
 
-					// 判斷葷素後，開始執行
+					// 先判斷葷素，後執行
 					let vage = document.getElementById('vage');
 					vage.checked ? chooseShop(vages) : chooseShop(meats);
 
